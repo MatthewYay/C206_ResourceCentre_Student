@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ResourceCentreTest {
+	
 	private Camcorder cc1;
 	private Camcorder cc2;
 	private Chromebook cb1;
@@ -52,6 +53,15 @@ public class ResourceCentreTest {
 	public void testAddChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		//chromebookList.size() = 0;
+		
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		
+		assertEquals("Test if that Chromebook arraylist size is 2", 2, chromebookList.size());
 	}
 	
 	@Test
@@ -88,13 +98,21 @@ public class ResourceCentreTest {
 	public void testDoLoanCamcorder() {
 		//fail("Not yet implemented");
 		// write your code here
-		
+		String id ="CC0012";
+		String duedate ="10/10/2021";
+		boolean check = ResourceCentre.doLoanCamcorder(camcorderList, id, duedate);
+		assertEquals("Test failed as code not yet implemented", false, check);
+
 	}
 	
 	@Test
 	public void testDoLoanChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		String id ="cb0011";
+		String duedate ="12/12/2021";
+		boolean check = ResourceCentre.doLoanChromebook(chromebookList, id, duedate);
+		assertEquals("Test failed as code not yet implemented", false, check);
 	}
 	
 	@Test
